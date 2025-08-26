@@ -40,7 +40,7 @@ const CreateBlog = () => {
     try {
       setLoading(true);
       const res = await axios.post(
-        `http://localhost:3000/api/v1/blog/`,
+        `https://apna-blog-4k8w.onrender.com/api/v1/blog/`,
         { title, category },
         {
           headers: { "Content-Type": "application/json" },

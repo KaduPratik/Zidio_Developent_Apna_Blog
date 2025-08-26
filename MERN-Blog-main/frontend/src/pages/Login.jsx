@@ -47,7 +47,7 @@ const Login = () => {
 
       // Step 2: Send proper payload
       const response = await axios.post(
-        "http://localhost:3000/api/v1/user/login",
+        "https://apna-blog-4k8w.onrender.com/api/v1/user/login",
         {
           email: input.email.trim(),
           password: input.password.trim(),

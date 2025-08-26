@@ -55,7 +55,7 @@ const Navbar = () => {
 
   const logoutHandler = async (e) => {
     try {
-      const res = await axios.get(`http://localhost:3000/api/v1/user/logout`, {
+      const res = await axios.get(`https://apna-blog-4k8w.onrender.com/api/v1/user/logout`, {
         withCredentials: true,
       });
       if (res.data.success) {

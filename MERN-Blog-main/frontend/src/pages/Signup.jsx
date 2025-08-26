@@ -32,7 +32,7 @@ const Signup = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/v1/user/register",
+        "https://apna-blog-4k8w.onrender.com/api/v1/user/register",
         user,
         {
           headers: {

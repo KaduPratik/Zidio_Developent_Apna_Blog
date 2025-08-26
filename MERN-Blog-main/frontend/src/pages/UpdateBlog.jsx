@@ -96,7 +96,7 @@ const UpdateBlog = () => {
     try {
       setLoading(true);
       const res = await axios.put(
-        `http://localhost:3000/api/v1/blog/${blogId}`,
+        `https://apna-blog-4k8w.onrender.com/api/v1/blog/${blogId}`,
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },
@@ -122,7 +122,7 @@ const UpdateBlog = () => {
   const togglePublishUnpublish = async () => {
     try {
       const res = await axios.patch(
-        `http://localhost:3000/api/v1/blog/${blogId}`, // ✅ fixed (removed /toggle/)
+        `https://apna-blog-4k8w.onrender.com/api/v1/blog/${blogId}`, // ✅ fixed (removed /toggle/)
         { publish: !publish },
         { withCredentials: true }
       );
@@ -146,7 +146,7 @@ const UpdateBlog = () => {
   const deleteBlog = async () => {
     try {
       const res = await axios.delete(
-        `http://localhost:3000/api/v1/blog/delete/${blogId}`,
+        `https://apna-blog-4k8w.onrender.com/api/v1/blog/delete/${blogId}`,
         { withCredentials: true }
       );
 

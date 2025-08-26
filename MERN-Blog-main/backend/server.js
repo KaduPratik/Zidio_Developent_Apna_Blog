@@ -19,10 +19,31 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
+
+// CORS middleware
 app.use(
   cors({
-    origin: ["http://localhost:5173"],
+    origin: [
+      "http://localhost:5173", // local dev
+      "https://apnaablog.netlify.app", // Netlify frontend
+      "https://apna-blog-4k8w.onrender.com", // Render frontend
+    ],
     credentials: true,
+  })
+);
+
+// ✅ Handle preflight OPTIONS requests
+app.options(
+  "*",
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://apnaablog.netlify.app",
+      "https://apna-blog-4k8w.onrender.com",
+    ],
+    credentials: true,
+    allowedHeaders: ["Content-Type", "Authorization"],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   })
 );
 

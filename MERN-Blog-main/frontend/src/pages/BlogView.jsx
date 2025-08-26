@@ -40,7 +40,7 @@ const BlogView = () => {
     try {
       const action = liked ? "dislike" : "like";
       const res = await axios.get(
-        `http://localhost:3000/api/v1/blog/${selectedBlog._id}/${action}`,
+        `https://apna-blog-4k8w.onrender.com/api/v1/blog/${selectedBlog._id}/${action}`,
         { withCredentials: true }
       );
       if (res.data.success) {
